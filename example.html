@@ -1,0 +1,80 @@
+<body ng-app="app">
+<div class="container" ng-controller="Controller as v">
+    <form class="stepContainer">
+
+        <div>
+            <h4>INN Example</h4>
+            <input type="text" name="inn"
+                   dadata
+                   ddt-type="PARTY"
+                   ddt-model="v.party"
+                   ng-model="v.user.inn"
+                   id="inn">
+        </div>
+
+        <div>
+            <h4>BIC Example</h4>
+            <input type="text" name="inn" id="bic"
+                   dadata
+                   ddt-type="BANK"
+                   ddt-model="v.bank"
+                   ng-model="v.user.bic"
+            >
+        </div>
+
+        <div>
+            <h4>Granular address example </h4>
+            <input type="text" name="legal-region" id="legal-region"
+                   dadata
+                   ddt-type="ADDRESS"
+                   ddt-model="v.address.region"
+                   ddt-bounds="region"
+                   ng-model="v.user.legalRegion"
+            >
+            <input type="text" name="legal-area" id="legal-area"
+                   dadata
+                   ddt-type="ADDRESS"
+                   ddt-model="v.address.area"
+                   ddt-bounds="area"
+                   ddt-constraints="legal-region"
+                   ng-model="v.user.legalArea"
+            >
+            <input type="text" name="legal-city" id="legal-city"
+                   dadata
+                   ddt-type="ADDRESS"
+                   ddt-model="v.address.city"
+                   ddt-bounds="city-settlement"
+                   ddt-constraints="legal-area"
+                   ng-model="v.user.legalCity"
+            >
+            <input type="text" name="legal-street" id="legal-street"
+                   dadata
+                   ddt-type="ADDRESS"
+                   ddt-model="v.address.street"
+                   ddt-bounds="street"
+                   ddt-constraints="legal-city"
+                   ng-model="v.user.street"
+            >
+            <input type="text" name="legal-house" id="legal-house"
+                   dadata
+                   ddt-type="ADDRESS"
+                   ddt-model="v.address.house"
+                   ddt-bounds="house"
+                   ddt-constraints="legal-street"
+                   ng-model="v.user.house"
+            >
+        </div>
+
+        <div>
+            <h4>One string address example (input or textarea - doesnt matter) </h4>
+            <textarea id="fullAddress" name="fullAddress"
+                      dadata
+                      ddt-type="ADDRESS"
+                      ddt-model="vm.user.factAddress"
+                      ng-model="vm.user.factAddress"
+            ></textarea>
+        </div>
+
+    </form>
+</div>
+</body>
