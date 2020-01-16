@@ -12,6 +12,22 @@
                 type: scope.type.toUpperCase(),
                 bounds: scope.bounds,
                 constraints: angular.element(document.getElementById(scope.constraints)),
+                formatSelected: function(suggestion){
+                    //Customize the format and output property of the tooltip result
+
+                    /*For example: */
+                    
+                    // if(scope.type === 'BANK'){
+                    //    return suggestion.data.bic;
+                    // }
+                    // if(scope.type === 'PARTY'){
+                    //    return suggestion.data.inn;
+                    // }
+                    // if(scope.type === 'ADDRESS'){
+                    //     return suggestion.value;
+                    // }
+
+                },
                 onSelect: function (suggestion) {
 
                     // do something ...
